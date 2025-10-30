@@ -1,0 +1,138 @@
+.remedies-container {
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  max-width: 1200px;
+  margin: 20px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.search-input {
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-input:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.remedy-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.remedy-form input,
+.remedy-form select,
+.remedy-form textarea,
+.remedy-form button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.remedy-form button {
+  background: #4e73df;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.remedy-form button:hover {
+  background: #2e59d9;
+}
+
+.remedies-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.remedies-table th,
+.remedies-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.remedies-table th {
+  background: #f8f9fc;
+  color: #333;
+}
+
+.remedies-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.remedies-table tr:hover {
+  background: #f1f1f1;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 2px;
+}
+
+.edit-btn {
+  background-color: #2196f3;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #1976d2;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Status badges */
+.badge {
+  padding: 5px 10px;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+}
+
+.pending {
+  background-color: orange;
+}
+
+.completed {
+  background-color: #4caf50;
+}
+
+@media screen and (max-width: 768px) {
+  .remedy-form {
+    grid-template-columns: 1fr;
+  }
+
+  .remedies-table th,
+  .remedies-table td {
+    font-size: 14px;
+    padding: 8px;
+  }
+}

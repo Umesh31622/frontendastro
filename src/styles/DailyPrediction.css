@@ -1,0 +1,66 @@
+.calculator-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+h2 { text-align: center; margin-bottom: 1.5rem; }
+
+.calculator-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.calculator-form input, .calculator-form textarea, .calculator-form button {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.calculator-form textarea { flex-basis: 100%; height: 60px; }
+
+.calculator-form button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  flex-basis: 100%;
+  transition: 0.3s;
+}
+
+.calculator-form button:hover { background-color: #218838; }
+
+.calculator-table { width: 100%; border-collapse: collapse; }
+
+.calculator-table th, .calculator-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.calculator-table th { background-color: #007bff; color: white; }
+
+.edit-btn { background-color: #ffc107; color: black; margin-right: 4px; padding: 4px 8px; border: none; border-radius: 4px; cursor: pointer; }
+.edit-btn:hover { background-color: #e0a800; }
+
+.delete-btn { background-color: #dc3545; color: white; padding: 4px 8px; border: none; border-radius: 4px; cursor: pointer; }
+.delete-btn:hover { background-color: #c82333; }
+
+@media(max-width:768px) {
+  .calculator-form { flex-direction: column; }
+  .calculator-form input, .calculator-form textarea, .calculator-form button { width: 100%; }
+  .calculator-table, .calculator-table thead, .calculator-table tbody, .calculator-table th, .calculator-table td, .calculator-table tr { display: block; }
+  .calculator-table tr { margin-bottom: 1rem; border-bottom: 1px solid #ddd; }
+  .calculator-table td { text-align: right; padding-left: 50%; position: relative; }
+  .calculator-table td::before { content: attr(data-label); position: absolute; left: 0; width: 45%; font-weight: bold; text-align: left; }
+  .calculator-table th { display: none; }
+} 
+

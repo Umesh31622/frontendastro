@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+.calculator-container {
+  max-width: 900px;
+  margin: 1.5rem auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.calculator-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 15px;
+}
+
+.calculator-form input,
+.calculator-form button {
+  flex: 1;
+  min-width: 140px;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 13px;
+  height: 32px;
+}
+
+.calculator-form button {
+  background-color: #28a745;
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.calculator-form button:hover {
+  background-color: #218838;
+}
+
+.calculator-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.calculator-table th, .calculator-table td {
+  border: 1px solid #ddd;
+  padding: 6px;
+  text-align: center;
+}
+
+.calculator-table th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.edit-btn, .delete-btn {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.edit-btn {
+  background-color: #ffc107;
+  color: #000;
+  margin-right: 4px;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.edit-btn:hover { background-color: #e0a800; }
+.delete-btn:hover { background-color: #b52a37; }
+
+@media (max-width: 768px) {
+  .calculator-form { flex-direction: column; }
+  .calculator-form input, .calculator-form button { width: 100%; }
+
+  .calculator-table, .calculator-table thead, .calculator-table tbody,
+  .calculator-table th, .calculator-table td, .calculator-table tr {
+    display: block;
+  }
+
+  .calculator-table th { display: none; }
+
+  .calculator-table tr {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 6px;
+  }
+
+  .calculator-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .calculator-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    font-weight: 600;
+    text-align: left;
+  }
+}

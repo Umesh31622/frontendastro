@@ -1,0 +1,283 @@
+/* .numerology-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fefefe;
+  border-radius: 16px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.numerology-container h2 {
+  text-align: center;
+  color: #3c3b6e;
+  margin-bottom: 1.5rem;
+}
+
+.numerology-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.numerology-form input {
+  flex: 1 1 300px;
+  padding: 0.6rem 1rem;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.numerology-form button {
+  background: #3c3b6e;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.numerology-form button:hover {
+  background: #2b2962;
+}
+
+.numerology-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.numerology-card {
+  background: #f8f8ff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(60, 59, 110, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h3 {
+  margin: 0;
+  color: #2b2962;
+}
+
+.desc {
+  font-style: italic;
+  color: #555;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.card-actions button {
+  background: #f0f0f5;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+}
+
+.card-actions button:hover {
+  background: #ddd;
+}
+
+@media (max-width: 600px) {
+  .numerology-form {
+    flex-direction: column;
+  }
+
+  .numerology-card {
+    font-size: 0.9rem;
+  }
+} */
+.numerology-container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-btn {
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  background-color: #45a049;
+}
+
+/* Form */
+.numerology-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.numerology-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.numerology-form button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #2196f3;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.numerology-form button:hover {
+  background-color: #1976d2;
+}
+
+/* Table */
+.numerology-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.numerology-table th,
+.numerology-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.numerology-table th {
+  background-color: #f2f2f2;
+}
+
+.numerology-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.numerology-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.numerology-table button {
+  margin: 2px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.numerology-table button:first-child {
+  background-color: #ff9800;
+  color: white;
+}
+
+.numerology-table button:first-child:hover {
+  background-color: #fb8c00;
+}
+
+.numerology-table button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.numerology-table button:last-child:hover {
+  background-color: #d32f2f;
+}
+
+p {
+  text-align: center;
+  font-size: 16px;
+  color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Form adjusts vertically */
+  .numerology-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .numerology-form input,
+  .numerology-form button {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  /* Table becomes scrollable */
+  .numerology-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .numerology-table th,
+  .numerology-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Table converts to card view on very small screens */
+  .numerology-table,
+  .numerology-table thead,
+  .numerology-table tbody,
+  .numerology-table th,
+  .numerology-table td,
+  .numerology-table tr {
+    display: block;
+  }
+
+  .numerology-table thead tr {
+    display: none;
+  }
+
+  .numerology-table tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .numerology-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .numerology-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    width: 45%;
+    font-weight: bold;
+    text-align: left;
+  }
+}
