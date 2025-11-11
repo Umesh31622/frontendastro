@@ -1,0 +1,235 @@
+/* Container */
+.admin-calculators {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #fafafa;
+  border-radius: 8px;
+}
+
+/* Heading */
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Search and Filters */
+.search-filter {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.search-filter input,
+.search-filter select {
+  padding: 8px 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+/* Global Actions Buttons */
+.global-actions {
+  display: flex;
+  gap: 16px; /* Space between Add, Preview, Export */
+}
+
+.global-actions button {
+  padding: 8px 18px;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.global-actions button:nth-child(1) { background-color: #007bff; } /* Add */
+.global-actions button:nth-child(2) { background-color: #28a745; } /* Preview */
+.global-actions button:nth-child(3) { background-color: #6c757d; } /* Export */
+
+.global-actions button:hover {
+  opacity: 0.9;
+}
+
+/* Form Row */
+.form-row {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  flex: 1;
+  min-width: 140px;
+  font-size: 15px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Buttons under form row */
+.input-buttons {
+  display: flex;
+  gap: 24px; /* space between Add Input, Preview, Add */
+  margin: 8px 0 18px 0;
+}
+
+.input-buttons button {
+  padding: 8px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+}
+
+.input-buttons button:nth-child(1) { background-color: #007bff; } /* Add Input */
+.input-buttons button:nth-child(2) { background-color: #28a745; } /* Preview */
+.input-buttons button:nth-child(3) { background-color: #6c757d; } /* Add */
+
+.input-buttons button:hover { opacity: 0.9; }
+
+/* Table */
+.calc-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.calc-table th,
+.calc-table td {
+  padding: 16px 30px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.calc-table th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+
+.calc-table th:first-child,
+.calc-table td:first-child { padding-left: 36px; }
+.calc-table th:last-child,
+.calc-table td:last-child { padding-right: 36px; }
+
+.calc-table tr:hover { background-color: #f0f8ff; }
+
+.inactive { color: #999; background-color: #f9f9f9; }
+
+/* Formula Dropdown */
+.formula-dropdown {
+  min-width: 170px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Row actions */
+.actions-cell {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.action-btn {
+  padding: 6px 14px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.action-btn.edit { background-color: #007bff; }
+.action-btn.preview { background-color: #28a745; }
+.action-btn.delete { background-color: #dc3545; }
+
+.action-btn:hover { opacity: 0.9; }
+
+/* Pagination */
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.pagination button {
+  padding: 8px 18px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Preview modal */
+.preview-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.preview-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  min-width: 350px;
+}
+
+.preview-content h3 { margin-bottom: 15px; }
+
+.preview-content pre {
+  background: #f7f7f7;
+  padding: 12px;
+  border-radius: 6px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.preview-content button {
+  margin-top: 15px;
+  padding: 8px 18px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .search-filter { flex-direction: column; gap: 12px; }
+  .form-row { flex-direction: column; gap: 12px; }
+  .input-buttons { flex-direction: column; gap: 12px; }
+  .actions-cell { flex-direction: column; gap: 8px; }
+  .calc-table th, .calc-table td { padding: 12px 15px; }
+}
