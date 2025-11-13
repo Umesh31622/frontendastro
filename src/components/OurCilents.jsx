@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 
 const API = "https://adminastrotalk-1.onrender.com/api/our-clients";
-const BASE_URL = "http://localhost:7000"; // change if your backend runs elsewhere
+// const BASE_URL = "http://localhost:7000"; 
 
 export default function OurClients() {
   const [clients, setClients] = useState([]);
