@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+
 const API = "https://adminastrotalk-1.onrender.com/api/contact";
 
 export default function ContactMessages() {
@@ -208,7 +209,3 @@ export default function ContactMessages() {
     </div>
   );
 }
-
-
-
-
