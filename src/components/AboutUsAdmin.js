@@ -4,50 +4,60 @@
 
 // const API_BASE = process.env.REACT_APP_API_URL || "https://adminastrotalk-1.onrender.com/api";
 
-// const AboutUsAdmin = () => {
+// export default function AboutUsAdmin() {
+//   const [title, setTitle] = useState("About Us");
 //   const [content, setContent] = useState("");
-//   const [image, setImage] = useState("");
+//   const [file, setFile] = useState(null);
 //   const [preview, setPreview] = useState("");
 //   const [loading, setLoading] = useState(false);
 
+//   // 🔹 Fetch existing About Us content
 //   useEffect(() => {
-//     fetchContent();
+//     fetchAboutData();
 //   }, []);
 
-//   // 🔹 Fetch current content from backend
-//   const fetchContent = async () => {
+//   const fetchAboutData = async () => {
 //     try {
-//       const res = await axios.get(`${API_BASE}/content/about`);
-//       setContent(res.data.content || "");
-//       setImage(res.data.image || "");
-//       setPreview(res.data.image || "");
+//       const res = await axios.get(`${API_BASE}/about`);
+//       if (res.data) {
+//         setTitle(res.data.title || "About Us");
+//         setContent(res.data.content || "");
+//         setPreview(res.data.image || "");
+//       }
 //     } catch (err) {
-//       console.error(err);
+//       console.error("❌ Error fetching About data:", err.message);
 //     }
 //   };
 
-//   // 🔹 Convert uploaded file to base64
+//   // 🔹 Handle image upload (preview before save)
 //   const handleFileChange = (e) => {
 //     const file = e.target.files[0];
 //     if (!file) return;
-//     const reader = new FileReader();
-//     reader.onloadend = () => {
-//       setPreview(reader.result);
-//       setImage(reader.result);
-//     };
-//     reader.readAsDataURL(file);
+//     setFile(file);
+//     setPreview(URL.createObjectURL(file));
 //   };
 
-//   // 🔹 Save About Us Content
+//   // 🔹 Save / Update About Us Data
 //   const handleSave = async () => {
-//     if (!content.trim()) return alert("Please write some content!");
+//     if (!content.trim()) return alert("⚠️ Please enter About Us content!");
+
 //     try {
 //       setLoading(true);
-//       await axios.post(`${API_BASE}/content/about`, { content, image });
+//       const formData = new FormData();
+//       formData.append("title", title);
+//       formData.append("content", content);
+//       if (file) formData.append("file", file);
+
+//       await axios.post(`${API_BASE}/about`, formData, {
+//         headers: { "Content-Type": "multipart/form-data" },
+//       });
+
 //       alert("✅ About Us updated successfully!");
+//       fetchAboutData();
+//       setFile(null);
 //     } catch (err) {
-//       console.error(err);
-//       alert("❌ Error updating About Us.");
+//       console.error("❌ Error updating About:", err.message);
+//       alert("❌ Failed to update About Us.");
 //     } finally {
 //       setLoading(false);
 //     }
@@ -57,20 +67,26 @@
 //     <div className="admin-content-page">
 //       <h2>🪐 Edit “About Us” Section</h2>
 
-//       <label className="admin-label">About Us Description</label>
+//       <label className="admin-label">Title</label>
+//       <input
+//         type="text"
+//         value={title}
+//         onChange={(e) => setTitle(e.target.value)}
+//         placeholder="Enter title (e.g., About Us)"
+//         className="admin-input"
+//       />
+
+//       <label className="admin-label">Description</label>
 //       <textarea
-//         rows="10"
+//         rows="8"
 //         value={content}
 //         onChange={(e) => setContent(e.target.value)}
 //         placeholder="Write About Us content..."
+//         className="admin-textarea"
 //       ></textarea>
 
 //       <label className="admin-label">Upload Image (Optional)</label>
-//       <input
-//         type="file"
-//         accept="image/*"
-//         onChange={handleFileChange}
-//       />
+//       <input type="file" accept="image/*" onChange={handleFileChange} />
 
 //       {preview && (
 //         <div className="image-preview">
@@ -78,114 +94,173 @@
 //         </div>
 //       )}
 
-//       <button onClick={handleSave} disabled={loading}>
-//         {loading ? "Saving..." : "Save Changes"}
+//       <button className="save-btn" onClick={handleSave} disabled={loading}>
+//         {loading ? "Saving..." : "💾 Save Changes"}
 //       </button>
 //     </div>
 //   );
-// };
+// }
 
-// export default AboutUsAdmin;
-
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "../styles/AdminContent.css";
-
-const API_BASE = process.env.REACT_APP_API_URL || "https://adminastrotalk-1.onrender.com/api";
+import "../styles/AboutUsAdmin.css";
 
 export default function AboutUsAdmin() {
-  const [title, setTitle] = useState("About Us");
+  const BASE_URL = "https://adminastrotalk-1.onrender.com/api/about";
+
+  const [about, setAbout] = useState(null);
+
+  const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
-  // 🔹 Fetch existing About Us content
-  useEffect(() => {
-    fetchAboutData();
-  }, []);
-
-  const fetchAboutData = async () => {
+  // Load single about
+  const loadAbout = async () => {
     try {
-      const res = await axios.get(`${API_BASE}/about`);
-      if (res.data) {
-        setTitle(res.data.title || "About Us");
-        setContent(res.data.content || "");
-        setPreview(res.data.image || "");
-      }
+      const res = await axios.get(BASE_URL);
+      const data = res.data.data || res.data;
+      setAbout(data);
+
+      setTitle(data.title || "");
+      setContent(data.content || "");
+      setPreview(data.image || "");
     } catch (err) {
-      console.error("❌ Error fetching About data:", err.message);
+      console.log("Error loading:", err.message);
     }
   };
 
-  // 🔹 Handle image upload (preview before save)
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    setFile(file);
-    setPreview(URL.createObjectURL(file));
+  useEffect(() => {
+    loadAbout();
+  }, []);
+
+  const openModal = () => {
+    setShowModal(true);
   };
 
-  // 🔹 Save / Update About Us Data
-  const handleSave = async () => {
-    if (!content.trim()) return alert("⚠️ Please enter About Us content!");
-
+  const saveAbout = async () => {
     try {
-      setLoading(true);
-      const formData = new FormData();
-      formData.append("title", title);
-      formData.append("content", content);
-      if (file) formData.append("file", file);
+      const fd = new FormData();
+      fd.append("title", title);
+      fd.append("content", content);
+      if (file) fd.append("file", file);
 
-      await axios.post(`${API_BASE}/about`, formData, {
+      await axios.post(BASE_URL, fd, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
-      alert("✅ About Us updated successfully!");
-      fetchAboutData();
-      setFile(null);
+      alert("Saved successfully!");
+      setShowModal(false);
+      loadAbout();
     } catch (err) {
-      console.error("❌ Error updating About:", err.message);
-      alert("❌ Failed to update About Us.");
-    } finally {
-      setLoading(false);
+      alert("Error saving");
     }
   };
 
+  const deleteAbout = async () => {
+    if (!window.confirm("Delete About Us?")) return;
+
+    try {
+      await axios.delete(BASE_URL);
+      alert("Deleted");
+      setAbout(null);
+    } catch (err) {
+      alert("Delete failed");
+    }
+  };
+
+  const onFileChange = (e) => {
+    const f = e.target.files[0];
+    setFile(f);
+    setPreview(URL.createObjectURL(f));
+  };
+
   return (
-    <div className="admin-content-page">
-      <h2>🪐 Edit “About Us” Section</h2>
+    <div className="about-admin-container">
+      <h2 className="admin-title">📄 About Us — Admin</h2>
 
-      <label className="admin-label">Title</label>
-      <input
-        type="text"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        placeholder="Enter title (e.g., About Us)"
-        className="admin-input"
-      />
+      <button className="add-btn" onClick={openModal}>
+        {about ? "✏ Edit" : "➕ Add New"}
+      </button>
 
-      <label className="admin-label">Description</label>
-      <textarea
-        rows="8"
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-        placeholder="Write About Us content..."
-        className="admin-textarea"
-      ></textarea>
+      {/* TABLE */}
+      {about ? (
+        <table className="admin-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description (Preview)</th>
+              <th>Image</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
 
-      <label className="admin-label">Upload Image (Optional)</label>
-      <input type="file" accept="image/*" onChange={handleFileChange} />
-
-      {preview && (
-        <div className="image-preview">
-          <img src={preview} alt="Preview" />
-        </div>
+          <tbody>
+            <tr>
+              <td>{about.title}</td>
+              <td>
+                {(about.content || "").slice(0, 100)}
+                {(about.content || "").length > 100 && "..."}
+              </td>
+              <td>
+                <img
+                  src={about.image}
+                  alt=""
+                  className="table-image"
+                />
+              </td>
+              <td>
+                <button className="edit-btn" onClick={openModal}>✏ Edit</button>
+                <button className="delete-btn" onClick={deleteAbout}>🗑 Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      ) : (
+        <p>No About data found.</p>
       )}
 
-      <button className="save-btn" onClick={handleSave} disabled={loading}>
-        {loading ? "Saving..." : "💾 Save Changes"}
-      </button>
+      {/* MODAL */}
+      {showModal && (
+        <div className="modal-bg" onClick={() => setShowModal(false)}>
+          <div className="modal-box" onClick={(e) => e.stopPropagation()}>
+            <h3>{about ? "Edit About" : "Add About"}</h3>
+
+            <label>Title</label>
+            <input
+              className="input"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+
+            <label>Description</label>
+            <textarea
+              className="textarea"
+              rows="5"
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
+            />
+
+            <label>Image</label>
+            <input type="file" onChange={onFileChange} />
+
+            {preview && (
+              <img src={preview} className="preview-image" />
+            )}
+
+            <div className="modal-actions">
+              <button className="save-btn" onClick={saveAbout}>
+                💾 Save
+              </button>
+              <button className="cancel-btn" onClick={() => setShowModal(false)}>
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
+
