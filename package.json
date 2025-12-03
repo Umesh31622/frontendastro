@@ -1,0 +1,61 @@
+{
+  "name": "mern-admin-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "dependencies": {
+    "@fullcalendar/daygrid": "^6.1.19",
+    "@fullcalendar/interaction": "^6.1.19",
+    "@fullcalendar/react": "^6.1.19",
+    "@fullcalendar/timegrid": "^6.1.19",
+    "axios": "^1.13.1",
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "framer-motion": "^12.23.24",
+    "helmet": "^8.1.0",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.3",
+    "lucide-react": "^0.553.0",
+    "mongoose": "^8.19.1",
+    "morgan": "^1.10.1",
+    "multer": "^2.0.2",
+    "react": "^18.3.1",
+    "react-beautiful-dnd": "^13.1.1",
+    "react-calendar": "^6.0.0",
+    "react-circular-progressbar": "^2.2.0",
+    "react-confetti": "^6.4.0",
+    "react-dom": "^18.3.1",
+    "react-modal": "^3.16.3",
+    "react-router-dom": "^7.9.4",
+    "react-scripts": "5.0.1",
+    "react-toastify": "^11.0.5",
+    "recharts": "^3.3.0",
+    "socket.io-client": "^4.8.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "browserify-zlib": "^0.2.0",
+    "buffer": "^6.0.3",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "util": "^0.12.5"
+  }
+}

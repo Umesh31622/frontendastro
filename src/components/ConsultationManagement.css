@@ -1,0 +1,97 @@
+.consultation-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.btn-toggle-form {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn-toggle-form:hover {
+  background-color: #1e40af;
+}
+
+.consultation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.consultation-form input,
+.consultation-form textarea,
+.consultation-form button {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.consultation-form button {
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.consultation-form button:hover {
+  background-color: #1e40af;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.consultation-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.consultation-table th,
+.consultation-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 14px;
+}
+
+.consultation-table th {
+  background-color: #f3f4f6;
+}
+
+.consultation-table td button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.consultation-table td button:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .consultation-form input,
+  .consultation-form textarea,
+  .consultation-form button {
+    font-size: 12px;
+  }
+  .consultation-table th,
+  .consultation-table td {
+    font-size: 12px;
+  }
+}

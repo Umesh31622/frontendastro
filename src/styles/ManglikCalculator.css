@@ -1,0 +1,237 @@
+/* .manglik-calculator-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.manglik-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.manglik-form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  background: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.manglik-form button:disabled {
+  background: #888;
+  cursor: not-allowed;
+}
+
+.error-message {
+  margin-top: 15px;
+  color: red;
+  font-weight: bold;
+}
+
+.result-container {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+} */
+
+.manglik-calculator-container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-btn {
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  background-color: #45a049;
+}
+
+/* Form */
+.manglik-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.manglik-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.manglik-form button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #2196f3;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.manglik-form button:hover {
+  background-color: #1976d2;
+}
+
+.error-message {
+  text-align: center;
+  color: red;
+  margin-bottom: 15px;
+}
+
+/* Table */
+.manglik-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.manglik-table th,
+.manglik-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.manglik-table th {
+  background-color: #f2f2f2;
+}
+
+.manglik-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.manglik-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.manglik-table button {
+  margin: 2px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.manglik-table button:first-child {
+  background-color: #ff9800;
+  color: white;
+}
+
+.manglik-table button:first-child:hover {
+  background-color: #fb8c00;
+}
+
+.manglik-table button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.manglik-table button:last-child:hover {
+  background-color: #d32f2f;
+}
+
+p {
+  text-align: center;
+  font-size: 16px;
+  color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Form adjusts vertically */
+  .manglik-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .manglik-form input,
+  .manglik-form button {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  /* Table becomes scrollable */
+  .manglik-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .manglik-table th,
+  .manglik-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Table converts to card view on very small screens */
+  .manglik-table,
+  .manglik-table thead,
+  .manglik-table tbody,
+  .manglik-table th,
+  .manglik-table td,
+  .manglik-table tr {
+    display: block;
+  }
+
+  .manglik-table thead tr {
+    display: none;
+  }
+
+  .manglik-table tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .manglik-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .manglik-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    width: 45%;
+    font-weight: bold;
+    text-align: left;
+  }
+}

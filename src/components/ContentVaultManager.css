@@ -1,0 +1,257 @@
+.vault-wrapper {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 25px;
+  background: #ffffff;
+  color: #222;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.add-btn {
+  background: linear-gradient(90deg, #3b82f6, #2563eb);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  padding: 10px 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+  background: linear-gradient(90deg, #2563eb, #1d4ed8);
+  transform: translateY(-1px);
+}
+
+.table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  background: #fff;
+}
+
+th,
+td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  vertical-align: middle;
+}
+
+th {
+  background: #f3f4f6;
+  color: #1e40af;
+  font-weight: 600;
+}
+
+td {
+  color: #333;
+  background-color: #fff;
+}
+
+td.actions button {
+  margin-right: 6px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+td.actions button:first-child {
+  background: #3b82f6;
+  color: white;
+}
+
+td.actions button:first-child:hover {
+  background: #2563eb;
+}
+
+td.actions button:last-child {
+  background: #ef4444;
+  color: white;
+}
+
+td.actions button:last-child:hover {
+  background: #dc2626;
+}
+
+/* Modal */
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 10px;
+  backdrop-filter: blur(2px);
+}
+
+.modal {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 550px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal h3 {
+  text-align: center;
+  color: #1e40af;
+  margin-bottom: 8px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-grid input,
+.form-grid select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  color: #111827;
+  width: 100%;
+  font-size: 14px;
+  transition: border 0.3s ease;
+}
+
+.form-grid input:focus,
+.form-grid select:focus {
+  border-color: #2563eb;
+  outline: none;
+  background: #fff;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.modal-actions button:first-child {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.modal-actions button:first-child:hover {
+  background: #1e3a8a;
+}
+
+.modal-actions button:last-child {
+  background: #6b7280;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.modal-actions button:last-child:hover {
+  background: #4b5563;
+}
+
+.preview {
+  margin-top: 10px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vault-wrapper {
+    padding: 15px;
+    margin: 15px;
+  }
+
+  table,
+  th,
+  td {
+    font-size: 13px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .add-btn {
+    width: 100%;
+  }
+
+  td.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+}
+.preview video {
+  width: 260px !important;
+  height: 150px !important;
+  object-fit: cover !important;
+  border-radius: 10px;
+  display: block;
+  margin: 10px auto;
+}
+
+.preview {
+  max-height: 180px;
+  overflow: hidden;
+  text-align: center;
+}

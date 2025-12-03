@@ -1,0 +1,143 @@
+.admin-content-page {
+  background: #f9fafc;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+}
+
+.admin-content-page h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #2c2c54;
+}
+
+textarea,
+input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  transition: 0.3s;
+}
+
+textarea:focus,
+input:focus {
+  border-color: #7b3fe4;
+  box-shadow: 0 0 8px rgba(123, 63, 228, 0.4);
+}
+
+button {
+  background: linear-gradient(135deg, #7b3fe4, #a569ff);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(123, 63, 228, 0.3);
+}
+
+.career-list {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.career-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.career-card h3 {
+  color: #2d1b69;
+}
+
+.career-card p {
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+.career-card button {
+  background: #ff5a5f;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+.admin-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background: #121212;
+  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.admin-table th, .admin-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+.edit-btn {
+  background: #0099ff;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+.delete-btn {
+  background: #ff4444;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-left: 8px;
+}
+
+/* Modal */
+.modal-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #00000088;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-box {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+}
+.modal-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.cancel-btn {
+  background: #555;
+  padding: 8px 15px;
+  border-radius: 6px;
+}
+.add-btn {
+  background: #28a745;
+  padding: 8px 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  color: white;
+}
+.add-btn:hover {
+  background: #1e8d3b;
+}

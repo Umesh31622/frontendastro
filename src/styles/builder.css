@@ -1,0 +1,61 @@
+.builder-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+
+.dropdown-wrapper {
+  margin-bottom: 20px;
+}
+
+select {
+  padding: 5px 10px;
+  margin-left: 10px;
+}
+
+.component-container {
+  margin-top: 20px;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form input {
+  padding: 5px;
+  flex: 1 1 200px;
+}
+
+.form button {
+  padding: 5px 15px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.action-buttons button {
+  margin-left: 5px;
+  padding: 3px 8px;
+  cursor: pointer;
+}
+
+.placeholder-text {
+  font-style: italic;
+  color: #555;
+}

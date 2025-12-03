@@ -1,0 +1,403 @@
+/* .transit-container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #fffef7;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.add-btn {
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-btn:hover {
+  background-color: #45a049;
+}
+
+
+.transit-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.transit-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  flex: 1 1 200px;
+}
+
+.transit-form .btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.transit-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.transit-form .calculate-btn {
+  background-color: #2196f3;
+  color: white;
+}
+
+.transit-form .calculate-btn:hover {
+  background-color: #1976d2;
+}
+
+.transit-form .cancel-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.transit-form .cancel-btn:hover {
+  background-color: #d32f2f;
+}
+
+
+.transit-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.transit-table th,
+.transit-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.transit-table th {
+  background-color: #f2f2f2;
+}
+
+.transit-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.transit-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.transit-table button {
+  margin: 2px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.transit-table .edit-btn {
+  background-color: #ff9800;
+  color: white;
+}
+
+.transit-table .edit-btn:hover {
+  background-color: #fb8c00;
+}
+
+.transit-table .delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.transit-table .delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+p {
+  text-align: center;
+  font-size: 16px;
+  color: #777;
+}
+
+
+@media (max-width: 768px) {
+  .transit-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .transit-form input,
+  .transit-form button {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .transit-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .transit-table th,
+  .transit-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .transit-table,
+  .transit-table thead,
+  .transit-table tbody,
+  .transit-table th,
+  .transit-table td,
+  .transit-table tr {
+    display: block;
+  }
+
+  .transit-table thead tr {
+    display: none;
+  }
+
+  .transit-table tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background: #f8f8f8;
+  }
+
+  .transit-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .transit-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    width: 45%;
+    font-weight: bold;
+    text-align: left;
+  }
+} */
+
+.transit-container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-btn {
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  background-color: #45a049;
+}
+
+/* Form */
+.transit-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.transit-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.transit-form .btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.transit-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.transit-form .calculate-btn {
+  background-color: #2196f3;
+  color: white;
+}
+
+.transit-form .calculate-btn:hover {
+  background-color: #1976d2;
+}
+
+.transit-form .cancel-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.transit-form .cancel-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Table */
+.transit-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.transit-table th,
+.transit-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.transit-table th {
+  background-color: #f2f2f2;
+}
+
+.transit-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.transit-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.transit-table button {
+  margin: 2px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.transit-table .edit-btn {
+  background-color: #ff9800;
+  color: white;
+}
+
+.transit-table .edit-btn:hover {
+  background-color: #fb8c00;
+}
+
+.transit-table .delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.transit-table .delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+p {
+  text-align: center;
+  font-size: 16px;
+  color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .transit-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .transit-form input,
+  .transit-form button {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .transit-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .transit-table th,
+  .transit-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .transit-table,
+  .transit-table thead,
+  .transit-table tbody,
+  .transit-table th,
+  .transit-table td,
+  .transit-table tr {
+    display: block;
+  }
+
+  .transit-table thead tr {
+    display: none;
+  }
+
+  .transit-table tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .transit-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .transit-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    width: 45%;
+    font-weight: bold;
+    text-align: left;
+  }
+}

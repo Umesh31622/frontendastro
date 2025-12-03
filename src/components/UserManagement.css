@@ -1,0 +1,40 @@
+.um-wrapper {
+  padding: 20px;
+}
+
+.um-wrapper h2 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.um-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+}
+
+.um-table th,
+.um-table td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.um-actions button {
+  padding: 6px 12px;
+  margin-right: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.um-actions .view {
+  background: #00eaff;
+  color: #111;
+}
+
+.um-actions .delete {
+  background: #ff0066;
+  color: white;
+}

@@ -1,0 +1,203 @@
+/* frontend/src/components/FeedbackPage.css */
+/* Simple, responsive styles for FeedbackPage - mobile-first */
+
+/* Reset-ish small helpers */
+.feedback-container {
+  max-width: 980px;
+  margin: 16px auto;
+  padding: 18px;
+  box-sizing: border-box;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #0f172a; /* slate-900 */
+  background: #ffffff;
+}
+
+/* Header */
+.feedback-container h2 {
+  margin: 0 0 14px 0;
+  font-size: 1.3rem;
+  letter-spacing: -0.2px;
+}
+
+/* Message / alert */
+.msg {
+  margin: 10px 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #f1f5f9; /* light slate */
+  color: #111827;
+  font-size: 0.95rem;
+}
+
+/* Form layout */
+.feedback-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+/* Inputs / textarea / select */
+.feedback-form input[type="text"],
+.feedback-form input[type="email"],
+.feedback-form textarea,
+.feedback-form select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e6e9ef;
+  background: #ffffff;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  transition: box-shadow .15s ease, border-color .15s ease;
+  outline: none;
+}
+
+/* Textarea tweak */
+.feedback-form textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+/* Focus state */
+.feedback-form input:focus,
+.feedback-form textarea:focus,
+.feedback-form select:focus {
+  border-color: #60a5fa; /* blue-400 */
+  box-shadow: 0 4px 14px rgba(96, 165, 250, 0.08);
+}
+
+/* Buttons */
+.feedback-form button,
+.feedback-card button {
+  padding: 10px 12px;
+  background: #2563eb; /* blue-600 */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .12s ease, opacity .08s ease;
+}
+
+.feedback-form button:hover,
+.feedback-card button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.12);
+}
+
+/* Secondary small buttons (edit/delete) */
+.feedback-card .btn-inline {
+  background: #f8fafc;
+  color: #0f172a;
+  border: 1px solid #e6e9ef;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.feedback-card .btn-inline.danger {
+  background: #fee2e2; /* red-100 */
+  color: #991b1b; /* red-800 */
+  border: 1px solid #fecaca;
+}
+
+/* Feedback list layout */
+.feedback-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+/* Feedback card */
+.feedback-card {
+  padding: 12px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e6edf7;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Card header */
+.feedback-card h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Card meta */
+.feedback-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+/* Rating small */
+.feedback-card .rating {
+  font-weight: 700;
+  color: #b45309; /* amber/dark */
+}
+
+/* Actions row */
+.feedback-card .actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* Responsive tweaks - medium screens and up */
+@media (min-width: 640px) {
+  .feedback-form {
+    grid-template-columns: 1fr 1fr;
+  }
+  .feedback-form textarea {
+    grid-column: 1 / -1;
+  }
+  .feedback-form button {
+    grid-column: 1 / -1;
+    width: 160px;
+    justify-self: start;
+  }
+
+  .feedback-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  .feedback-container {
+    padding: 24px;
+  }
+  .feedback-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+}
+
+/* Tiny devices - tighten spacing */
+@media (max-width: 360px) {
+  .feedback-container {
+    padding: 12px;
+  }
+  .feedback-form input,
+  .feedback-form textarea,
+  .feedback-form select {
+    padding: 8px 10px;
+  }
+  .feedback-form button {
+    padding: 10px;
+  }
+}
+
+/* Accessibility: focus visible */
+.feedback-form input:focus-visible,
+.feedback-form textarea:focus-visible,
+.feedback-form select:focus-visible,
+.feedback-form button:focus-visible {
+  outline: 3px solid rgba(96,165,250,0.18);
+  outline-offset: 2px;
+}
