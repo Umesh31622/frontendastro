@@ -495,7 +495,8 @@ export default function App() {
         />
 
         {/* DEFAULT REDIRECT */}
-        <Route path="/" element={<Navigate to="/user" />} />
+        <Route path="/" element={<Navigate to="/admin" replace />} />
+
 
         {/* 404 */}
         <Route
