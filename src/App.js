@@ -457,7 +457,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         {/* USER WEBSITE */}
-        <Route path="/user/*" element={<UserWebApp />} />
+        <Route path="/admin/*" element={<UserWebApp />} />
 
         {/* ADMIN LOGIN */}
         <Route
