@@ -1,0 +1,165 @@
+/* MAIN WRAPPER */
+.km-wrapper {
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  max-width: 1200px;
+  margin: 20px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* TITLE */
+.km-title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #2e59d9;
+}
+
+/* FORM STYLING */
+.km-upload-card {
+  background: #f8f9fc;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #e3e6f0;
+  margin-bottom: 30px;
+}
+
+.km-upload-card h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.km-input {
+  padding: 12px;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+.km-input:focus {
+  border-color: #4e73df;
+  box-shadow: 0 0 5px rgba(78, 115, 223, 0.4);
+}
+
+/* BUTTON */
+.km-upload-btn {
+  padding: 12px;
+  background: #4e73df;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+  width: 100%;
+}
+
+.km-upload-btn:hover {
+  background: #2e59d9;
+}
+
+/* SUCCESS / ERROR MESSAGE */
+.km-msg {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+/* SUBTITLE */
+.km-subtitle {
+  margin-bottom: 15px;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #2e59d9;
+}
+
+/* PDF LIST TABLE STYLE CARDS */
+.km-list-wrapper {
+  margin-top: 10px;
+}
+
+.km-item {
+  width: 100%;
+  background: #f8f9fc;
+  border: 1px solid #e3e6f0;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 12px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: 0.2s ease;
+}
+
+.km-item:hover {
+  background: #eef1f7;
+}
+
+/* VIEW LINK */
+.km-view {
+  text-decoration: none;
+  color: #4e73df;
+  font-weight: 600;
+}
+
+.km-view:hover {
+  text-decoration: underline;
+}
+
+/* ACTION BUTTONS */
+.km-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.km-edit-btn,
+.km-delete-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #fff;
+  transition: 0.2s;
+}
+
+.km-edit-btn {
+  background-color: #2196f3;
+}
+
+.km-edit-btn:hover {
+  background-color: #1976d2;
+}
+
+.km-delete-btn {
+  background-color: #f44336;
+}
+
+.km-delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Empty message */
+.km-empty {
+  color: #666;
+  font-style: italic;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .km-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .km-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
