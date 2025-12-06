@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./KnowMoreAdmin.css";
 
-const API = "http://localhost:7000/api/know-more";
+const API = "https://adminastrotalk-1.onrender.com/api/know-more";
 
 const KnowMoreAdmin = () => {
   const [title, setTitle] = useState("");
